@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Nike_Engagement</title>
+    <link rel="stylesheet" type="text/css" href="css/nike.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Rubik&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div id="dynamicNavbar" class="glass-navbar hidden">
+        <div class="navbar-content">
+          <a href="#" class="navbar-logo"><img src="media/mainlogo.png" height="60px"></a>
+          <div class="navbar-links">
+            <a href="#about-us">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+      
+
+    <div id="loading-overlay">
+        <div class="pixelated-bg2">
+        <img id="loading-logo" src="media/New_Medium_White-Red.png" alt="Loading...">
+        </div>
+    </div>
+    <div class="pixelated-bg">
+    </div>
+    <div class="mainlogo">
+        <img src="media/mainlogo.png" class="indexlogo">
+    </div>
+    <div class="headertext1" id="headerbox">
+        <h1 id="title0"></h1>
+        <h1 id="title"></h1>
+    </div>
+
+    <div class="breaker">
+
+    </div>
+    <div class="firstInfo">
+        <h1>Data is at our heart</h1>
+        <div class="firstInfoIn">
+            <h2>So why don't you take advantage of our business expertise and let us show you how to transform your business?</h2>
+        </div>
+    </div>
+
+    <div class="datasphere">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.54/build/spline-viewer.js"></script>
+        <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/95uRDw0flzbMN9Qb/scene.splinecode"></spline-viewer>
+    </div>
+
+    <div class="secondInfo">
+        <div class="secondInfoHead">
+            <h1>Unclutter</h1>
+        </div>
+        <div class="unclutter">
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.54/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/2vFeJ9eWzzSIrFmd/scene.splinecode"></spline-viewer>
+        </div>
+        <div class="secondInfoText">
+            <h2>and gain business intelligence like never before.</h2>
+        </div>
+    </div>
+
+    <div id="userIDInpt" style="opacity: 0;">
+        <input id="IDinputField" type="text" placeholder="Enter your UserID">
+        <button id="setUser" onclick="skipID()">Skip</button>
+    </div>
+    <div id="loadingGIF">
+        <img src="media/loading.gif" width="30%">
+    </div>
+
+    <script src="js/nike.js"></script>
+    <script>
+        const inputField = document.getElementById('IDinputField');
+        let typingTimeout;
+
+        inputField.addEventListener('input', () => {
+            clearTimeout(typingTimeout);
+            let input = inputField.value.trim();
+            if (input !== '') {
+                console.log("Touched");
+                touched();
+                typingTimeout = setTimeout(() => {
+                    console.log(input);
+                    setUserID(input);
+                    relocate();
+                }, 5000);
+            }
+        });
+        window.addEventListener('scroll', () => {
+  const scrollDistance = window.pageYOffset;
+
+  // Select your elements
+  const logo = document.querySelector('.mainlogo');
+  const breaker = document.querySelector('.breaker');
+  const headerText = document.querySelector('.headertext1');
+  const datasphere = document.querySelector('.datasphere');
+  const firstInfo = document.querySelector('.firstInfo');
+  const secondInfo = document.querySelector('.secondInfo');
+  // Define the acceleration factor
+  const accelerationFactor = 0.8;
+
+  // Calculate and set the transform property
+  [logo, breaker, headerText, datasphere, firstInfo, secondInfo].forEach(element => {
+    if (element) {
+      const transformValue = scrollDistance * accelerationFactor;
+      element.style.transform = `translateY(-${transformValue}px)`;
+    }
+  });
+});
+
+    </script>
+
+
+</body>
+
+</html>

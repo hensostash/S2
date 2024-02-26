@@ -1,0 +1,414 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  opacity: 0;
+  animation: opacity1 1s ease-in-out 1 forwards;
+  position: relative;
+  /* Add this to make sure the z-index works correctly */
+  background: linear-gradient(120deg, #222222, #3b3b3b);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed; /* Optional: Keeps the background fixed during scroll */
+}
+
+@keyframes opacity0 {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+
+}
+
+@keyframes opacity1 {
+  from {
+    opacity: 0;
+    /* ANIMATION */
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+.pixelated-bg {
+  background: url("../media/dot2.png");
+  background-repeat: repeat;
+  background-size: 50px 50px;
+  width: 100%;
+  height: 200%;
+  position: absolute;
+  /* Use absolute positioning to cover the whole viewport */
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: fillDots 5s forwards;
+  animation-delay: 4s;
+}
+
+@keyframes fillDots {
+  to {
+    background-size: 5px 5px; /* end with the final size of the dots */
+  }
+}
+
+/* Initial hidden state */
+.hidden {
+  visibility: hidden;
+  transform: scale(0.5); /* Scale down */
+  transition: visibility 0s linear 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+
+/* Glass effect and positioning */
+.glass-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 50px; /* Offset from the top */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  width: 33.333%; /* About a third of the screen's width */
+  background: rgba(62, 62, 62, 0.6);
+  backdrop-filter: blur(100px);
+  border-radius: 30px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it's above other content */
+  opacity: 1;
+  transition: opacity 0.5s;
+  transform: translateX(-50%) scale(1); /* Ensure it scales up when appearing */
+
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar-logo {
+  position: relative;
+  left: 20px;
+}
+
+
+.navbar-links a {
+  position: relative;
+  left: 400px;
+  text-decoration: none;
+  color: #ffffff;
+  /* Add more styling as needed */
+}
+
+
+.navbar-content {
+  width: 33.333%; /* Middle third of the navbar */
+  display: flex;
+  justify-content: space-around; /* Adjust as needed */
+  align-items: center; /* Center items vertically */
+  /* Additional styling for the content */
+}
+
+
+.breaker {
+  background-color: white;
+  color: white;
+  width: 2px;
+  height: 160px;
+  position: absolute;
+
+}
+
+.headertext1 {
+  color: white;
+  font-size: 3vh;
+  left:55%;
+  top: 36%;
+  position: absolute;
+  /* Center the text horizontally */
+  font-family: 'Roboto', sans-serif;
+}
+
+.firstInfo {
+  position: absolute;
+  top: 142%;
+  left: 32%;
+  font-size: x-large;
+  color: white;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.firstInfoIn {
+  font-size: medium;
+  max-width: 550px;
+}
+
+.secondInfo {
+  position: absolute;
+  top: 200%;
+}
+.secondInfoHead {
+  position: absolute;
+  top: 10%;
+  left: 38%;
+  font-size: x-large;
+  color: rgb(255, 255, 255);
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.unclutter {
+  width: 900px;
+  height: 900px;
+}
+.secondInfoText {
+  position: absolute;
+  text-align: center;
+  left: 25%;
+  bottom: 10%;
+  color: white;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.datasphere {
+  width: 300vh;
+  top: 140%;
+  right: 15%;
+  position: absolute;
+}
+.mainlogo, .breaker, .headertext1, .datasphere, .firstInfo, .secondInfo {
+  transition: transform 0.2s ease-out; /* Smooth transition */
+  /* Your existing styles */
+}
+.mainlogo {
+  top: 42.5%;
+  left: 22%;
+  z-index: 999;
+  position: absolute;
+}
+.indexlogo {
+  width: 40%;
+}
+
+#title {
+  font-family: 'Rubik', sans-serif;
+}
+
+#IDinputField {
+  opacity: 0;
+  animation: opacity1 1s 6s ease-in-out 1 forwards;
+  position: absolute;
+  background-size: 400%;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.256);
+  padding: 10px;
+  border: 2px solid transparent;
+  /* Set the border to transparent initially */
+  border-radius: 10px;
+  width: 300px;
+  height: 40px;
+  color: white;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+#IDinputField::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#IDinputField:focus {
+  border: 2px solid rgba(0, 123, 255, 0.6);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}
+
+@keyframes glowing-border-85 {
+  0% {
+    border-color: rgba(255, 0, 200, 0);
+    opacity: 1;
+  }
+
+  20% {
+    border-color: rgba(255, 0, 200, 0.5);
+    opacity: 1;
+  }
+
+  50% {
+    border-color: rgba(122, 0, 255, 0.5);
+    opacity: 1;
+  }
+
+  90% {
+    border-color: rgba(255, 0, 200, 0.5);
+    opacity: 1;
+  }
+
+  100% {
+    border-color: rgba(255, 0, 200, 0);
+    opacity: 1;
+  }
+}
+
+#setUser {
+  opacity: 0;
+  animation: opacity1 1s 2s ease-in-out 1 forwards;
+  position: absolute;
+  bottom: 10%;
+  /* Move the profile div down by 50% of the container height */
+  left: 50%;
+  /* Move the profile div to the right by 50% of the container width */
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.256);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  height: 50px;
+  width: 60px;
+}
+
+#setUser:hover {
+  background-color: rgba(0, 123, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+#loadingGIF {
+  opacity: 0;
+  position: absolute;
+  bottom: 16%;
+  /* Move the profile div down by 50% of the container height */
+  left: 53%;
+  /* Move the profile div to the right by 50% of the container width */
+  transform: translate(-50%, -50%);
+}
+@media (min-width: 20px) and (max-width: 750px) {
+  html,
+body {
+  height: 150%;
+  margin: 0;
+  /* Prevent scrolling */
+}
+  #title0 {
+    position: absolute;
+    top: 10%;
+    /* Move the profile div down by 50% of the container height */
+    left: 50%;
+    /* Move the profile div to the right by 50% of the container width */
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 4vh;
+    /* Center the text horizontally */
+    font-family: 'Roboto', sans-serif;
+  }
+  #title {
+    position: absolute;
+    top: 14%;
+    /* Move the profile div down by 50% of the container height */
+    left: 50%;
+    /* Move the profile div to the right by 50% of the container width */
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 5vh;
+    /* Center the text horizontally */
+    font-family: 'Rubik', sans-serif;
+  }
+    #IDinputField {
+      font-size: x-small;
+      top: 23%;
+      padding: 2px;
+      border-radius: 10px;
+      width: 120px;
+      height: 40px;
+      color: white;
+    }
+    #setUser {
+      top: 30%;
+      font-size: xx-small;
+      width: 60px;
+      height: 40px;
+    }
+
+    .mainlogo {
+      position: absolute;
+      top: 10%;
+      
+    }
+    .indexlogo {
+      width: 250px;
+    }
+
+    .headertext1 {
+      position: absolute;
+      top: 20%;
+    }
+    #title {
+      position: relative;
+      top: 20%;
+    }
+
+  }
+
+
+  #loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(31, 31, 31); /* semi-transparent white for glass effect */
+    backdrop-filter: blur(5px); /* blur effect for background */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: circleShrink 1s forwards;
+    animation-delay: 5s; /* wait for 2 seconds before starting the animation */
+}
+@keyframes circleShrink {
+  from {
+    clip-path: circle(75%);
+  }
+  to {
+    clip-path: circle(0% at 50% 50%);
+  }
+}
+
+
+@keyframes slideOff {
+  75% {
+    opacity: 1;
+  }  
+  100% {
+        top: 100%; /* slide off to the right */
+        opacity: 0; /* fade out the overlay */
+    }
+}
+
+#loading-logo {
+    width: 250px; /* Or whatever size you desire */
+    height: auto; /* This will maintain the aspect ratio */
+    opacity: 0.5;
+    animation: pulsate 1.5s infinite;
+}
+
+@keyframes pulsate {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+
