@@ -77,10 +77,10 @@ body {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  top: 50px; /* Offset from the top */
+  top: 1rem; /* Offset from the top */
   left: 50%;
   transform: translateX(-50%); /* Center horizontally */
-  width: 33.333%; /* About a third of the screen's width */
+  width: 90%; /* About a third of the screen's width */
   background: rgba(62, 62, 62, 0.6);
   backdrop-filter: blur(100px);
   border-radius: 30px;
@@ -101,13 +101,18 @@ body {
 
 .navbar-logo {
   position: relative;
-  left: 20px;
+  left: 2.8rem;
+}
+a {
+  color: white;
+  text-decoration: none;
 }
 
-
-.navbar-links a {
+.navbar-links {
+  justify-content: baseline;
+  align-items: center;
   position: relative;
-  left: 400px;
+  left: 14rem;
   text-decoration: none;
   color: #ffffff;
   /* Add more styling as needed */

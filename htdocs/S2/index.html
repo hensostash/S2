@@ -120,6 +120,34 @@
   });
 });
 
+window.addEventListener('scroll', function() {
+  const headerText = document.querySelector('.headertext1');
+  const navbar = document.getElementById('dynamicNavbar');
+  const headerPosition = headerText.getBoundingClientRect().bottom;
+
+  if (headerPosition < 0) {
+    // If the header text is off-screen, show the navbar
+    navbar.classList.remove('hidden');
+  } else {
+    // Otherwise, hide it
+    navbar.classList.add('hidden');
+  }
+});
+window.addEventListener('scroll', function() {
+  const headerText = document.querySelector('.headertext1');
+  const navbar = document.getElementById('dynamicNavbar');
+  const datasphere = document.querySelector('.datasphere');
+  const headerPosition = headerText.getBoundingClientRect().bottom + window.pageYOffset;
+
+  if (window.pageYOffset > headerPosition) {
+    navbar.classList.remove('hidden');
+    navbar.style.opacity = "1"; // Make the navbar visible
+    datasphere.classList.add('datasphere-visible'); // Trigger datasphere animation
+  } else {
+    navbar.classList.add('hidden');
+    datasphere.classList.remove('datasphere-visible'); // Reset datasphere position
+  }
+});
     </script>
 
 
