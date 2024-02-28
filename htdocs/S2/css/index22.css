@@ -1,0 +1,115 @@
+body {
+  background: linear-gradient(120deg, #222222, #3b3b3b);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* Optional: Keeps the background fixed during scroll */
+background-color: #222222;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "main-logo main-logo main-logo"
+      "additional-info additional-info additional-info";
+    grid-template-rows: auto; /* Adjust based on content */
+    grid-template-columns: 1fr;
+    gap: 20px; /* Space between grid items */
+  }
+  
+  .header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between; /* Aligns items horizontally */
+    align-items: center; /* Aligns items vertically */
+  }
+  
+  .main-logo {
+    margin-top: 5rem;
+    grid-area: main-logo;
+    text-align: center; /* Centers the logo and text */
+  }
+
+  
+
+  .main-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Aligns text centrally */
+    justify-content: center; /* Centers content vertically */
+    grid-area: main-logo; /* Assigns it to the correct grid area */
+    gap: 10px; /* Adjust based on your preference */
+  }
+  
+
+  
+  #title0, #title1 {
+    margin: 0; /* Removes default margins */
+    text-align: center; /* Ensures text is centered */
+    font-weight: lighter;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  #title1 {
+    font-weight: bold;
+  }
+
+  #logo1 {
+    grid-area: main-logo;
+    height: 20%;
+  }
+  
+  .additional-info {
+    grid-area: additional-info;
+  }
+
+.additional-text-1 {
+    color: wheat;
+    text-align: center;
+}
+.additional-text-2 {
+    color: wheat;
+    text-align: center;
+}
+
+.additional-anim {
+    grid-area: additional-info;
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+  .pixelated-bg {
+    background: url("../media/dot2.png");
+    background-repeat: repeat;
+    background-size: 50px 50px;
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    /* Use absolute positioning to cover the whole viewport */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: fillDots 5s forwards;
+    animation-delay: 4s;
+  }
+  
+  @keyframes fillDots {
+    to {
+      background-size: 5px 5px; /* end with the final size of the dots */
+    }
+  }
+  
+@media screen and (min-width: 768px) {
+    body {background-color: antiquewhite;}
+    .container {
+      grid-template-columns: repeat(3, 1fr); /* Creates a three-column layout on larger screens */
+    }
+    .header, .main-logo, .additional-info {
+      grid-column: span 3; /* Makes each section span all three columns */
+    }
+  }
+  
