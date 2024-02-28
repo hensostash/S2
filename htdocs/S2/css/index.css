@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   overflow-x: hidden;
+  background-color: #3b3b3b;
 }
 
 body {
@@ -193,7 +194,6 @@ font-weight: lighter;
 }
 
 .datasphere {
-  left: -40%;
   top: 27rem;
   width: 50rem;
   position: absolute;
@@ -210,7 +210,7 @@ font-weight: lighter;
   position: absolute;
 }
 .indexlogo {
-  width: 80%;
+  width: 25rem;
 }
 
 #title {
